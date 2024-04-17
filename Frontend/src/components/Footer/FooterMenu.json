@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "SUPPORT",
+    "subNames": [
+      {
+        "name": "Contact our Stores",
+        "url": "#"
+      },
+      {
+        "name": "Delivery",
+        "url": "#"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "OUR SERVICES",
+    "subNames": [
+      {
+        "name": "E-Commerce for Schools",
+        "url": "#"
+      },
+      {
+        "name": "E-Commerce for Corporates",
+        "url": "#"
+      },
+      {
+        "name": "E-Commerce for Sport Clubs",
+        "url": "#"
+      },
+      {
+        "name": "E-Commerce Gift Cards",
+        "url": "#"
+      },
+      {
+        "name": "Installation & Assembly Services",
+        "url": "#"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "ABOUT US",
+    "subNames": [
+      {
+        "name": "Who we are",
+        "url": "#"
+      },
+      {
+        "name": "E-Commerce CSR",
+        "url": "#"
+      },
+      {
+        "name": "Careers",
+        "url": "#"
+      },
+      {
+        "name": "Newsroom",
+        "url": "#"
+      },
+      {
+        "name": "Made In India",
+        "url": "#"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "LEGAL",
+    "subNames": [
+      {
+        "name": "Return Policy",
+        "url": "#"
+      },
+      {
+        "name": "Terms and Conditions",
+        "url": "#"
+      },
+      {
+        "name": "Privacy Policy",
+        "url": "#"
+      }
+    ]
+  }
+]
