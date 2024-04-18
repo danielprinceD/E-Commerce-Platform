@@ -1,19 +1,17 @@
-const dotenv = require("dotenv");
+const conn = require("./db/db");
 const express = require("express");
-const mongoose = require("mongoose");
-dotenv.config();
 const app = express();
 
-const PORT = process.env.PORT;
-const DB_URL = process.env.DB_URL;
+const PORT = process.env.SERVER_PORT;
 
-mongoose
-  .connect(DB_URL)
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log("DB Connected Successfully..!");
+app.get((req, res) => {});
+
+app.listen(PORT, () => {
+  conn
+    .then(() => {
+      console.log("DB Connected Successfully");
+    })
+    .catch((err) => {
+      console.log(err);
     });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+});
