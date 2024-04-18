@@ -42,15 +42,13 @@ const routes = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <DatabaseProvider>
-      <CartProvider>
-        <CheckoutProvider>
-          <HeaderProvider>
-            <RouterProvider router={routes} />
-          </HeaderProvider>
-        </CheckoutProvider>
-      </CartProvider>
-    </DatabaseProvider>
-  </React.StrictMode>,
+  <DatabaseProvider>
+    <CartProvider>
+      <CheckoutProvider>
+        <HeaderProvider>
+          <RouterProvider router={routes} />
+        </HeaderProvider>
+      </CheckoutProvider>
+    </CartProvider>
+  </DatabaseProvider>
 );
