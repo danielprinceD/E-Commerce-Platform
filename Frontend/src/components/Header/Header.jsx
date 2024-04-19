@@ -87,13 +87,6 @@ const Header = () => {
             <div className="hidden flex-col items-center justify-between gap-6 md:flex lg:flex-row">
               <div className="flex w-full justify-between lg:w-auto lg:justify-normal">
                 <HamburgerButton desktop={true} handler={menuHandler} />
-                <Link to="/" className="ml-3 cursor-default md:ml-6 lg:ml-12">
-                  <img
-                    className="cursor-pointer rounded-full lg:w-24"
-                    src={BrandLogo}
-                    alt="E-Commerce"
-                  />
-                </Link>
               </div>
               <div className="flex w-full flex-grow items-center lg:w-auto">
                 <div className="flex w-full items-center gap-10 pl-0 pr-0 lg:pl-6 lg:pr-6 ">
@@ -116,13 +109,6 @@ const Header = () => {
               <div className="mb-5 flex justify-between">
                 <div className="flex items-center">
                   <HamburgerButton handler={offCanvasHandler} />
-                  <Link to="/" className="ml-3 cursor-default md:ml-6 lg:ml-12">
-                    <img
-                      src={BrandLogo}
-                      className="w-28 cursor-pointer border border-white"
-                      alt="E-Commerce"
-                    />
-                  </Link>
                 </div>
                 <div className="flex items-center gap-3 ">
                   <a
