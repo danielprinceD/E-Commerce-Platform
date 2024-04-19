@@ -4,12 +4,6 @@ const { Electronics } = require("../Schema/electronicsSchema");
 const { Jewels } = require("../Schema/jewelsSchema");
 const { Clothing } = require("../Schema/clothingSchema");
 
-router.get("/getProducts", async (req, res) => {
-  console.log("Products Fetched");
-  const allProducts = await Products.find();
-  res.status(200).json(allProducts);
-});
-
 router.get("/getElectronics", async (req, res) => {
   console.log("Electronics Fetched");
   const allProducts = await Electronics.find();
