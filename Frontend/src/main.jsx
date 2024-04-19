@@ -20,6 +20,7 @@ import { Register } from "./components/Authentication/Register.jsx";
 import MyStore from "./pages/MyStore.jsx";
 import Wishlist from "./pages/WishList.jsx";
 import { Support } from "./pages/Support.jsx";
+import { Auth } from "./components/Authentication/Auth.jsx";
 
 const routes = createBrowserRouter([
   {
@@ -66,13 +67,15 @@ const routes = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <DatabaseProvider>
-    <CartProvider>
-      <CheckoutProvider>
-        <HeaderProvider>
-          <RouterProvider router={routes} />
-        </HeaderProvider>
-      </CheckoutProvider>
-    </CartProvider>
-  </DatabaseProvider>
+  <Auth>
+    <DatabaseProvider>
+      <CartProvider>
+        <CheckoutProvider>
+          <HeaderProvider>
+            <RouterProvider router={routes} />
+          </HeaderProvider>
+        </CheckoutProvider>
+      </CartProvider>
+    </DatabaseProvider>
+  </Auth>
 );

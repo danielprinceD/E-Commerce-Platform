@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from "react";
 import ShopSort from "../components/ShopFilter/ShopSort";
-import SingleCategoryFilter from "../components/ShopFilter/SingleCategoryFilter";
 import ProductCard from "../components/Utilities/ProductCard";
 import Loading from "../components/Utilities/Loading";
 import Layout from "../Layout";
 import { useDatabase } from "../contexts/DatabaseContext";
 
 const Products = () => {
+  const { fullData } = useDatabase();
   const { data } = useDatabase();
-  const [uniqueCat, setUniqueCat] = useState([]);
+  const [uniqueCat, setUniqueCat] = useState({
+    clothing: [],
+    jewels: [],
+    electronics: [],
+  });
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [filteredData, setFilteredData] = useState(data);
 
   // Effect to extract unique categories from data
   useEffect(() => {
-    const uniqueCategories = [...new Set(data.map((item) => item.category))];
+    const uniqueCategories = fullData;
     setUniqueCat(uniqueCategories);
-  }, [data]);
+  }, [fullData]);
 
   // Effect to filter products based on selected category
   useEffect(() => {
@@ -30,35 +34,36 @@ const Products = () => {
     }
   }, [data, selectedCategory]);
 
-  // Sort products based on selected sorting option
+  // // Sort products based on selected sorting option
   const sortProducts = (sortBy) => {
     let sortedData;
-
-    if (sortBy === "popularity") {
-      sortedData = [...filteredData].sort(
-        (a, b) => b.rating.count - a.rating.count,
-      );
-    } else if (sortBy === "low-to-high") {
-      sortedData = [...filteredData].sort((a, b) => a.price - b.price);
-    } else if (sortBy === "high-to-low") {
-      sortedData = [...filteredData].sort((a, b) => b.price - a.price);
+    if (sortBy === "electronics") {
+      sortedData = uniqueCat.electronics;
+    } else if (sortBy === "jewels") {
+      sortedData = uniqueCat.jewels;
+    } else if (sortBy === "clothing") {
+      sortedData = uniqueCat.clothing;
+    } else {
+      sortedData = data;
     }
     setFilteredData(sortedData);
+    console.log(filteredData);
   };
 
   // Effect to update sorted products when data changes
   useEffect(() => {
-    sortProducts("popularity");
+    sortProducts("all");
   }, [data]);
 
-  // Handler for category selection
+  // // Handler for category selection
   const categorySortingHandler = (category) => {
     setSelectedCategory(category);
   };
 
-  // Handler for sorting option selection
+  // // Handler for sorting option selection
   const sortHandler = (event) => {
     sortProducts(event.target.value);
+    console.log(event.target.value)
   };
 
   if (data.length) {
@@ -68,18 +73,9 @@ const Products = () => {
           <h1>Shop Page</h1>
           <ShopSort sortHandler={sortHandler} />
 
-          <div className="flex flex-wrap">
-            <aside className="w-full xl:w-3/12">
-              <div className="mr-10 rounded border bg-slate-100 p-10">
-                <SingleCategoryFilter
-                  uniqueCat={uniqueCat}
-                  categorySortingHandler={categorySortingHandler}
-                  selectedCategory={selectedCategory}
-                />
-              </div>
-            </aside>
-            <div className="w-full xl:w-9/12">
-              <div className="grid grid-cols-2 gap-6 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="flex flex-wrap justify-center">
+            <div className="w-full xl:w-11/12">
+              <div className="grid grid-cols-2 gap-6 lg:grid-cols-3 xl:grid-cols-4 justify-center">
                 {filteredData.length > 0 ? (
                   filteredData.map((item, index) => (
                     <ProductCard key={index} product={item} />
@@ -92,6 +88,7 @@ const Products = () => {
           </div>
         </div>
       </Layout>
+
     );
   } else {
     return <Loading />;

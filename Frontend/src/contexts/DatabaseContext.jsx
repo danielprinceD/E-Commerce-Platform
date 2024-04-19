@@ -9,6 +9,7 @@ export const useDatabase = () => {
 
 export const DatabaseProvider = ({ children }) => {
   const [data, setData] = useState();
+  const [fullData, setFullData] = useState();
   const [singleProduct, setSingleProduct] = useState();
 
   const [error, setError] = useState(null);
@@ -16,12 +17,18 @@ export const DatabaseProvider = ({ children }) => {
 
   const FetchInfo = async () => {
     try {
-      const response = await fetch("https://fakestoreapi.com/products/");
+      const response = await fetch("http://localhost:3000/api/get/allProducts");
       if (!response.ok) {
         throw new Error("Failed to fetch data!");
       }
-      const database = await response.json();
-
+      let database = await response.json();
+      setFullData(database);
+      console.log(database);
+      let electronics = database.electronics;
+      let jewels = database.jewels;
+      let clothings = database.clothing;
+      database = [...electronics, ...jewels, ...clothings]
+      console.log(database);
       setData(database);
     } catch (error) {
       setError(error);
@@ -32,7 +39,7 @@ export const DatabaseProvider = ({ children }) => {
 
   const FetchSingleProduct = async (id) => {
     try {
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      const response = await fetch(`http://localhost:3000/api/get/getElectronics/${id}`);
 
       if (!response.ok) {
         throw new Error("Failed to fetch data!");
@@ -61,7 +68,7 @@ export const DatabaseProvider = ({ children }) => {
 
   return (
     <DatabaseContext.Provider
-      value={{ data, singleProduct, FetchSingleProduct }}
+      value={{ data, fullData, singleProduct, FetchSingleProduct }}
     >
       {children}
     </DatabaseContext.Provider>

@@ -22,11 +22,6 @@ export const HeaderProvider = ({ children }) => {
     setOffCanvasOpen((isOffCanvasOpen) => !isOffCanvasOpen);
   };
 
-  const allCategories = [...new Set(data.map((item) => item.category))];
-
-  if (!activeCategory) {
-    setActiveCategory(data[0].category);
-  }
   return (
     <HeaderContext.Provider
       value={{
@@ -36,7 +31,6 @@ export const HeaderProvider = ({ children }) => {
         menuHandler,
         isOffCanvasOpen,
         offCanvasHandler,
-        allCategories,
         activeCategory,
         setActiveCategory,
       }}

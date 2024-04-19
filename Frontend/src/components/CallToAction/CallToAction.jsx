@@ -8,9 +8,9 @@ const CallToAction = () => {
   const [favouriteItems, setFavouriteItems] = useState([]);
 
   useEffect(() => {
-    const filteredItems = data.filter((item) => item.rating.rate >= 3);
+    const filteredItems = data;
     setFavouriteItems(filteredItems);
-  }, [data]);
+  }, []);
 
   return (
     <>

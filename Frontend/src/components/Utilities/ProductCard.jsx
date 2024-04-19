@@ -36,7 +36,8 @@ const ProductCard = ({ product, className }) => {
             <div className="flex items-center gap-2">
               <RiStarSFill className="inline-block text-yellow-400" />
               <span>
-                {product.rating.rate} | {product.rating.count}
+                {/* {product.rating.rate} | {product.rating.count} */}
+                4.5 | 5.0
               </span>
             </div>
           </div>
@@ -63,7 +64,7 @@ const ProductCard = ({ product, className }) => {
                 addToCartHandler(
                   product.id,
                   product.title,
-                  product.category,
+                  // product.category,
                   product.image,
                   product.price,
                 )
