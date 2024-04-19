@@ -4,16 +4,15 @@ import { useNavigate, NavLink } from 'react-router-dom';
 export const Register = () => {
     const [user, setUser] = useState('');
     const [pass, setPass] = useState('');
-    const navigate = useNavigate();
 
-    const handleLogin = () => {
-        // Your login logic here
+    const handleRegister = () => {
+        // register logic here
     };
 
     return (
         <div className="bg-gray-50 min-h-screen flex items-center justify-center">
             <div className="bg-white w-full sm:max-w-md px-6 py-12 rounded shadow-md">
-                <h1 className="text-2xl mb-8 text-center">Register</h1>
+                <h1 className="text-2xl mb-8 text-center font-bold">Register</h1>
                 <form className="space-y-4">
                     <input
                         type="text"
@@ -34,7 +33,7 @@ export const Register = () => {
                     <button
                         type="button"
                         id="login-btn"
-                        onClick={handleLogin}
+                        onClick={handleRegister}
                         className="w-full bg-blue-500 text-white p-3 rounded mt-4 mb-4"
                     >
                         Login

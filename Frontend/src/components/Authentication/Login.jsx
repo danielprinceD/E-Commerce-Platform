@@ -7,13 +7,13 @@ export const Login = () => {
     const navigate = useNavigate();
 
     const handleLogin = () => {
-        // Your login logic here
+        //login logic here
     };
 
     return (
         <div className="bg-gray-50 min-h-screen flex items-center justify-center">
             <div className="bg-white w-full sm:max-w-md px-6 py-12 rounded shadow-md">
-                <h1 className="text-2xl mb-8 text-center">Login</h1>
+                <h1 className="text-2xl mb-8 text-center font-bold">Login</h1>
                 <form className="space-y-4">
                     <input
                         type="text"
