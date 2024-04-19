@@ -79,7 +79,7 @@ const Header = () => {
           setSlideInCart={setSlideInCart}
           slideInCart={slideInCart}
         />
-        <div className="bg-primary px-4 py-3 xl:py-4 2xl:px-16">
+        <div className="bg-blue-500 px-4 py-3 xl:py-4 2xl:px-16">
           <div className="container mx-auto">
             <div className="hidden flex-col items-center justify-between gap-6 md:flex lg:flex-row">
               <div className="flex w-full justify-between lg:w-auto lg:justify-normal">

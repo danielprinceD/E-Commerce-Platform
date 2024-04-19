@@ -66,7 +66,7 @@ const Checkout = () => {
                           </p>
                         </div>
                         <p className="flex-none font-medium text-gray-600">
-                          ${items.price}
+                          INR {items.price}
                         </p>
                       </li>
                     );
@@ -76,7 +76,7 @@ const Checkout = () => {
                   <div className="flex items-center justify-between">
                     <dt className="text-gray-600">Subtotal</dt>
                     <dd className="font-medium text-gray-600">
-                      ${calculateTotal(itemsInCart)}
+                      INR {calculateTotal(itemsInCart)}
                     </dd>
                   </div>
                   <div className="mt-5 flex items-center justify-between">
@@ -85,11 +85,11 @@ const Checkout = () => {
                   </div>
                   <div className="mt-5 flex items-center justify-between">
                     <dt className="text-gray-600">Taxes</dt>
-                    <dd className="font-medium text-gray-600">$0</dd>
+                    <dd className="font-medium text-gray-600">INR 0</dd>
                   </div>
                   <div className="mt-5 flex items-center justify-between border-t border-gray-200 pt-5 text-base">
                     <dt className="avx">Total</dt>
-                    <dd className="avx">${calculateTotal(itemsInCart)}</dd>
+                    <dd className="avx">INR {calculateTotal(itemsInCart)}</dd>
                   </div>
                 </dl>
               </div>
