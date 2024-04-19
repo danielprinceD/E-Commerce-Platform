@@ -61,7 +61,7 @@ const SearchField = () => {
   }, [searchInput, data]);
 
   const openProduct = (id) => {
-    navigate(`/products/${id}`);
+    navigate(`/shop/${id}`);
     setSearchInput("");
     setSearchResult([]);
   };

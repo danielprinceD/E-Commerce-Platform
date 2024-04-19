@@ -20,7 +20,7 @@ const OffCanvas = () => {
   };
 
   const openProduct = (id) => {
-    navigate(`/products/${id}`);
+    navigate(`/shop/${id}`);
     setOffCanvasOpen((isOffCanvasOpen) => !isOffCanvasOpen);
   };
 

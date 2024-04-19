@@ -17,6 +17,9 @@ import { CartProvider } from "./contexts/CartContext.jsx";
 import { CheckoutProvider } from "./contexts/CheckoutContext.jsx";
 import { Login } from "./components/Authentication/Login.jsx";
 import { Register } from "./components/Authentication/Register.jsx";
+import MyStore from "./pages/MyStore.jsx";
+import Wishlist from "./pages/WishList.jsx";
+import { Support } from "./pages/Support.jsx";
 
 const routes = createBrowserRouter([
   {
@@ -47,6 +50,18 @@ const routes = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/mystore",
+    element: <MyStore />,
+  },
+  {
+    path: "/wishlist",
+    element: <Wishlist />,
+  },
+  {
+    path: "/support",
+    element: <Support />,
   },
 ]);
 

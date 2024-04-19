@@ -14,7 +14,7 @@ const Checkout = () => {
   const navigate = useNavigate();
 
   const openProductHandler = (id) => {
-    navigate(`/products/${id}`);
+    navigate(`/shop/${id}`);
   };
 
   const isCartEmpty = itemsInCart.length > 0;

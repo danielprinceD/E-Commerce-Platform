@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
-
 import { useDatabase } from "../../contexts/DatabaseContext";
-
-import CTABanner from "../../assets/cta-banner.webp";
-
 import ProductCard from "../Utilities/ProductCard";
-import StoreBenefits from "../Utilities/StoreBenefits";
+
 
 const CallToAction = () => {
   const { data } = useDatabase();

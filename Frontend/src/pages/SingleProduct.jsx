@@ -109,7 +109,7 @@ const SingleProduct = () => {
                   </span>
                 </div>
                 <p className="my-3 border-b border-t py-4 text-3xl leading-10">
-                  ${price}
+                  {price} INR
                 </p>
                 <p className="my-6 text-gray-600 *:text-base">{description}</p>
 

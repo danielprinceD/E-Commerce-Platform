@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { FaRegUser, FaRegHeart } from "react-icons/fa";
 import { FaRegMessage, FaRegFloppyDisk } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
-
 import "./Header.css";
-import BrandLogo from "../../assets/logo.jpg";
 import MegaMenu from "./MegaMenu";
 import HamburgerButton from "./HamburgerButton";
 import SearchField from "./SearchField";
@@ -33,7 +30,7 @@ const Header = () => {
       id: 2,
       menu: "My Store",
       icon: <FaRegFloppyDisk />,
-      url: "/products",
+      url: "/mystore",
     },
     {
       id: 3,
@@ -69,7 +66,7 @@ const Header = () => {
   }, [isOpen]);
 
   const openProduct = (id) => {
-    navigate(`/products/${id}`);
+    navigate(`/shop/${id}`);
     setShowMegamenu((showMegamenu) => !showMegamenu);
     setIsOpen((isOpen) => !isOpen);
   };
