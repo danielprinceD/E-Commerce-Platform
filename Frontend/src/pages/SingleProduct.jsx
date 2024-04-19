@@ -20,8 +20,7 @@ const SingleProduct = () => {
     FetchSingleProduct(id);
   }, [singleProduct, FetchSingleProduct]);
 
-  // Since the fakestoreapi.com doesn't provides anymore data,
-  // I'm adding AccordionData staticly.
+
 
   const AccordionData = [
     {
