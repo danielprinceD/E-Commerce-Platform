@@ -103,7 +103,7 @@ const MegaMenu = ({ openProduct }) => {
                   />
                 </div>
                 <Link
-                  to="/products/"
+                  to="/shop/"
                   className="mt-10 w-full bg-sky-700 py-4 text-center font-semibold uppercase text-white"
                 >
                   explore more

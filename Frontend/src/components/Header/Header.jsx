@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { FaRegUser, FaRegHeart } from "react-icons/fa";
 import { FaRegMessage, FaRegFloppyDisk } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
-
 import "./Header.css";
-import BrandLogo from "../../assets/logo.jpg";
 import MegaMenu from "./MegaMenu";
 import HamburgerButton from "./HamburgerButton";
 import SearchField from "./SearchField";
@@ -25,15 +22,15 @@ const Header = () => {
   const Navigation = [
     {
       id: 1,
-      menu: "Sign In",
+      menu: "Login",
       icon: <FaRegUser />,
-      url: "/sign-in",
+      url: "/login",
     },
     {
       id: 2,
       menu: "My Store",
       icon: <FaRegFloppyDisk />,
-      url: "/products",
+      url: "/mystore",
     },
     {
       id: 3,
@@ -69,7 +66,7 @@ const Header = () => {
   }, [isOpen]);
 
   const openProduct = (id) => {
-    navigate(`/products/${id}`);
+    navigate(`/shop/${id}`);
     setShowMegamenu((showMegamenu) => !showMegamenu);
     setIsOpen((isOpen) => !isOpen);
   };
@@ -82,18 +79,11 @@ const Header = () => {
           setSlideInCart={setSlideInCart}
           slideInCart={slideInCart}
         />
-        <div className="bg-primary px-4 py-3 xl:py-4 2xl:px-16">
+        <div className="bg-blue-500 px-4 py-3 xl:py-4 2xl:px-16">
           <div className="container mx-auto">
             <div className="hidden flex-col items-center justify-between gap-6 md:flex lg:flex-row">
               <div className="flex w-full justify-between lg:w-auto lg:justify-normal">
                 <HamburgerButton desktop={true} handler={menuHandler} />
-                <Link to="/" className="ml-3 cursor-default md:ml-6 lg:ml-12">
-                  <img
-                    className="cursor-pointer rounded-full lg:w-24"
-                    src={BrandLogo}
-                    alt="E-Commerce"
-                  />
-                </Link>
               </div>
               <div className="flex w-full flex-grow items-center lg:w-auto">
                 <div className="flex w-full items-center gap-10 pl-0 pr-0 lg:pl-6 lg:pr-6 ">
@@ -116,13 +106,6 @@ const Header = () => {
               <div className="mb-5 flex justify-between">
                 <div className="flex items-center">
                   <HamburgerButton handler={offCanvasHandler} />
-                  <Link to="/" className="ml-3 cursor-default md:ml-6 lg:ml-12">
-                    <img
-                      src={BrandLogo}
-                      className="w-28 cursor-pointer border border-white"
-                      alt="E-Commerce"
-                    />
-                  </Link>
                 </div>
                 <div className="flex items-center gap-3 ">
                   <a

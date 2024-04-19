@@ -22,7 +22,7 @@ const CheckoutForm = () => {
   return (
     <form
       className="order-last mx-auto w-full py-16 md:order-first md:w-1/2 md:pr-10 lg:w-4/12"
-      onSubmit={() => formHandler()}
+      onSubmit={formHandler}
     >
       <div>
         <section>
@@ -43,9 +43,7 @@ const CheckoutForm = () => {
                 name="email"
                 autoComplete="email"
                 className="w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm"
-                onChange={() => {
-                  inputChangeHandler();
-                }}
+                onChange={inputChangeHandler}
               />
             </div>
           </div>
@@ -67,9 +65,7 @@ const CheckoutForm = () => {
                   name="name"
                   autoComplete="cc-name"
                   className="w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm"
-                  onChange={() => {
-                    inputChangeHandler();
-                  }}
+                  onChange={inputChangeHandler}
                 />
               </div>
             </div>
@@ -86,9 +82,7 @@ const CheckoutForm = () => {
                   id="cardNumber"
                   name="cardNumber"
                   autoComplete="cc-number"
-                  onChange={() => {
-                    inputChangeHandler();
-                  }}
+                  onChange={inputChangeHandler}
                   className="w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm"
                 />
               </div>
@@ -106,9 +100,7 @@ const CheckoutForm = () => {
                   name="expirationDate"
                   id="expiration-date"
                   autoComplete="cc-exp"
-                  onChange={() => {
-                    inputChangeHandler();
-                  }}
+                  onChange={inputChangeHandler}
                   className="w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm"
                 />
               </div>
@@ -126,9 +118,7 @@ const CheckoutForm = () => {
                   name="cvc"
                   id="cvc"
                   autoComplete="csc"
-                  onChange={() => {
-                    inputChangeHandler();
-                  }}
+                  onChange={inputChangeHandler}
                   className="w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm"
                 />
               </div>
@@ -153,9 +143,7 @@ const CheckoutForm = () => {
                   id="company"
                   name="company"
                   className="w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm"
-                  onChange={() => {
-                    inputChangeHandler();
-                  }}
+                  onChange={inputChangeHandler}
                 />
               </div>
             </div>
@@ -173,9 +161,7 @@ const CheckoutForm = () => {
                   name="address"
                   autoComplete="street-address"
                   className="w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm"
-                  onChange={() => {
-                    inputChangeHandler();
-                  }}
+                  onChange={inputChangeHandler}
                 />
               </div>
             </div>
@@ -192,9 +178,7 @@ const CheckoutForm = () => {
                   id="apartment"
                   name="apartment"
                   className="w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm"
-                  onChange={() => {
-                    inputChangeHandler();
-                  }}
+                  onChange={inputChangeHandler}
                 />
               </div>
             </div>
@@ -212,9 +196,7 @@ const CheckoutForm = () => {
                   name="city"
                   autoComplete="address-level2"
                   className="w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm"
-                  onChange={() => {
-                    inputChangeHandler();
-                  }}
+                  onChange={inputChangeHandler}
                 />
               </div>
             </div>
@@ -232,9 +214,7 @@ const CheckoutForm = () => {
                   name="region"
                   autoComplete="address-level1"
                   className="w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm"
-                  onChange={() => {
-                    inputChangeHandler();
-                  }}
+                  onChange={inputChangeHandler}
                 />
               </div>
             </div>
@@ -252,9 +232,7 @@ const CheckoutForm = () => {
                   name="postalCode"
                   autoComplete="postal-code"
                   className="w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm"
-                  onChange={() => {
-                    inputChangeHandler();
-                  }}
+                  onChange={inputChangeHandler}
                 />
               </div>
             </div>

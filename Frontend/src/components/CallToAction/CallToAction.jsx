@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
-
 import { useDatabase } from "../../contexts/DatabaseContext";
-
-import CTABanner from "../../assets/cta-banner.webp";
-
 import ProductCard from "../Utilities/ProductCard";
-import StoreBenefits from "../Utilities/StoreBenefits";
+
 
 const CallToAction = () => {
   const { data } = useDatabase();
@@ -18,7 +14,7 @@ const CallToAction = () => {
 
   return (
     <>
-      <section className="container mx-auto">
+      <section className="container mx-auto mt-4 mb-4">
         <div>
           <div className="my-6">
             <span className="block text-sm font-bold capitalize text-gray-500">
@@ -41,14 +37,6 @@ const CallToAction = () => {
           </section>
         </div>
       </section>
-      <div
-        className="my-6 py-6"
-        style={{ backgroundImage: `url(${CTABanner})` }}
-      >
-        <div className="container mx-auto">
-          <StoreBenefits isBorder={true} />
-        </div>
-      </div>
     </>
   );
 };

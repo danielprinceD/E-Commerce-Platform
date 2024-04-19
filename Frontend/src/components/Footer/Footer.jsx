@@ -8,9 +8,6 @@ import DebitCard from "../../assets/debit-card.svg";
 import CreditCard from "../../assets/credit-card.svg";
 import UPI from "../../assets/upi.svg";
 import NetBanking from "../../assets/net-banking.svg";
-import FooterLogo from "../../assets/footer-logo.svg";
-import Leaf from "../../assets/leaf.webp";
-import Stick from "../../assets/stick.webp";
 
 import FooterMenu from "./FooterMenu.json";
 
@@ -134,37 +131,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="relative">
-        <div className="container mx-auto mt-9">
-          <h3 className="mb-4 text-center font-bold uppercase text-gray-900">
-            Our Purpose
-          </h3>
-          <p className="mb-4 text-center  text-base font-semibold text-sky-700 md:text-lg">
-            <span className="text-lime-500">To Sustainably</span> make the
-            Pleasure and Benefits of Sport accessible to the Many
-          </p>
-          <div className="relative py-10">
-            <img
-              src={Leaf}
-              alt="leaf"
-              className="absolute -top-20 right-0 w-28 object-cover sm:w-auto"
-            />
-            <img
-              src={FooterLogo}
-              alt="e-commerce logo"
-              className="mx-auto w-3/6"
-            />
-          </div>
-          <p className="py-10 text-center text-xs">
-            © 2024 E-Commerce Sports India Pvt Ltd. All rights reserved.
-          </p>
-        </div>
-      </div>
-      <img
-        src={Stick}
-        alt="stick"
-        className="absolute bottom-0 w-28 object-contain sm:w-auto"
-      />
     </footer>
   );
 };

@@ -124,7 +124,7 @@ const CartWithItem = ({
                         <span>
                           <b>Quantity:</b> {item.quantity}
                         </span>
-                        <span className="block">$ {item.price}</span>
+                        <span className="block">INR {item.price}</span>
                       </div>
                     </div>
                   </div>
@@ -142,7 +142,7 @@ const CartWithItem = ({
           </div>
           <div className="flex justify-between py-3">
             <p className="font-semibold">Subtotal</p>
-            <p className="font-semibold">$ {calculateTotal(itemsInCart)}</p>
+            <p className="font-semibold">INR {calculateTotal(itemsInCart)}</p>
           </div>
           <div className="flex flex-col items-center justify-between">
             <a
