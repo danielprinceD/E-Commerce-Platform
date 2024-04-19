@@ -8,11 +8,6 @@ const MyStore = () => {
     const { data } = useDatabase();
     const [favouriteItems, setFavouriteItems] = useState([]);
 
-    // useEffect(() => {
-    //     const filteredItems = data.filter((item) => item.rating.rate >= 3);
-    //     setFavouriteItems(filteredItems);
-    // }, [data]);
-
     return (
         <Layout>
             <section className="container mx-auto mt-4 mb-4">

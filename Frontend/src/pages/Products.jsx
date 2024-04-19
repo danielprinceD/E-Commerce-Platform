@@ -16,13 +16,13 @@ const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [filteredData, setFilteredData] = useState(data);
 
-  // Effect to extract unique categories from data
+
   useEffect(() => {
     const uniqueCategories = fullData;
     setUniqueCat(uniqueCategories);
   }, [fullData]);
 
-  // Effect to filter products based on selected category
+
   useEffect(() => {
     if (selectedCategory) {
       const filtered = data.filter(
@@ -34,7 +34,7 @@ const Products = () => {
     }
   }, [data, selectedCategory]);
 
-  // // Sort products based on selected sorting option
+
   const sortProducts = (sortBy) => {
     let sortedData;
     if (sortBy === "electronics") {
@@ -50,17 +50,17 @@ const Products = () => {
     console.log(filteredData);
   };
 
-  // Effect to update sorted products when data changes
+
   useEffect(() => {
     sortProducts("all");
   }, [data]);
 
-  // // Handler for category selection
+
   const categorySortingHandler = (category) => {
     setSelectedCategory(category);
   };
 
-  // // Handler for sorting option selection
+
   const sortHandler = (event) => {
     sortProducts(event.target.value);
     console.log(event.target.value)

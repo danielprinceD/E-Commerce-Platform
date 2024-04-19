@@ -64,7 +64,6 @@ const ProductCard = ({ product, className }) => {
                 addToCartHandler(
                   product.id,
                   product.title,
-                  // product.category,
                   product.image,
                   product.price,
                 )
