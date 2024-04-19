@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from "./App.jsx";
 import "./index.css";
 
 import Homepage from "./pages/Homepage.jsx";
@@ -16,6 +15,8 @@ import { DatabaseProvider } from "./contexts/DatabaseContext.jsx";
 import { HeaderProvider } from "./contexts/HeaderContext.jsx";
 import { CartProvider } from "./contexts/CartContext.jsx";
 import { CheckoutProvider } from "./contexts/CheckoutContext.jsx";
+import { Login } from "./components/Authentication/Login.jsx";
+import { Register } from "./components/Authentication/Register.jsx";
 
 const routes = createBrowserRouter([
   {
@@ -38,6 +39,14 @@ const routes = createBrowserRouter([
   {
     path: "/confirmation",
     element: <Confirmation />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
 ]);
 

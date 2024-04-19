@@ -53,7 +53,7 @@ const ProductCard = ({ product, className }) => {
           <div className="mt-5 flex items-center">
             <div className="relative">
               <span className="block bg-yellow-300 p-2 pr-4 text-xs font-bold">
-                {product.price} USD
+                {product.price} INR
               </span>
               <span className="absolute left-full top-0 -ml-2 block h-full w-3 skew-x-12 bg-yellow-400"></span>
             </div>

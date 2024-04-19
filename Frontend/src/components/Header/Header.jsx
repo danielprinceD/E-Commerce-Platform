@@ -25,9 +25,9 @@ const Header = () => {
   const Navigation = [
     {
       id: 1,
-      menu: "Sign In",
+      menu: "Login",
       icon: <FaRegUser />,
-      url: "/sign-in",
+      url: "/login",
     },
     {
       id: 2,
