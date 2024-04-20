@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const dotenv = require("dotenv");
 dotenv.config();
+
 router.get("/get/:id", async (req, res) => {
   const params = req.params.id;
   const product = [];

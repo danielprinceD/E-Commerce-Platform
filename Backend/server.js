@@ -11,6 +11,7 @@ const electronics_route = require("./Router/electronicRoute");
 const jewels_route = require("./Router/jewelsRoute");
 const clothing_route = require("./Router/clothingRoute");
 const Model = require("./Router/findById");
+const search = require("./Router/SearchBar");
 const { default: axios } = require("axios");
 const app = express();
 const PORT = process.env.SERVER_PORT || 5000;
@@ -30,6 +31,7 @@ conn
     app.use("/Clothing", clothing_route);
     app.use("/Jewels", jewels_route);
     app.use("/Model", Model);
+    app.use("/Search", search);
 
     app.listen(PORT);
   })
