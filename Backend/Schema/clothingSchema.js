@@ -6,6 +6,9 @@ const clothingSchema = new mongoose.Schema({
     default:
       "https://unsplash.com/photos/photo-of-bag-sneakers-and-sunglasses-on-beige-surface-u79wy47kvVs",
   },
+  rating: {
+    type: Number,
+  },
   title: {
     type: String,
     require: true,
