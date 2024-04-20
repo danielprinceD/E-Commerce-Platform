@@ -63,13 +63,15 @@ const ProductCard = ({ product, className }) => {
             </div>
             <button
               className="cursor-pointer bg-black p-2 text-white"
-              onClick={() =>
+              onClick={() => {
+                console.log(product._id + " " + product.title + " " + product.image + " " + product.price);
                 addToCartHandler(
-                  product.id,
+                  product._id,
                   product.title,
                   product.image,
                   product.price,
                 )
+              }
               }
             >
               Add to Cart
