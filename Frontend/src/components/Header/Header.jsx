@@ -13,7 +13,6 @@ import { useAuth } from "../Authentication/Auth";
 const Header = () => {
   const { itemsInCart, calculateQuantity, slideInCart, setSlideInCart } =
     useCart();
-  const navigate = useNavigate();
   const context = useAuth();
 
   const TotalQuantity = calculateQuantity(itemsInCart);
@@ -41,12 +40,6 @@ const Header = () => {
       menu: "Support",
       icon: <FaRegMessage />,
       url: "/support",
-    },
-    {
-      id: 5,
-      menu: "Wishlist",
-      icon: <FaRegHeart />,
-      url: "/wishlist",
     },
   ];
 
@@ -93,10 +86,10 @@ const Header = () => {
                 </div>
                 <div className="flex items-center gap-3 ">
                   <a
-                    href="/sign-in"
+                    href="/login"
                     className="flex h-7 w-16 items-center justify-center rounded-md border border-white text-xs uppercase text-white"
                   >
-                    Sign In
+                    {localStorage.getItem("user") || context.user != null ? localStorage.getItem("user") : "Login"}
                   </a>
                 </div>
               </div>
