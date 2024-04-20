@@ -8,19 +8,21 @@ import MainMenu from "./MainMenu";
 import SlideInCart from "../SlideInCart/SlideInCart";
 
 import { useCart } from "../../contexts/CartContext";
+import { useAuth } from "../Authentication/Auth";
 
 const Header = () => {
   const { itemsInCart, calculateQuantity, slideInCart, setSlideInCart } =
     useCart();
   const navigate = useNavigate();
+  const context = useAuth();
 
   const TotalQuantity = calculateQuantity(itemsInCart);
   const Navigation = [
     {
       id: 1,
-      menu: "Login",
+      menu: localStorage.getItem("user") || context.user != null ? localStorage.getItem("user") : "Login",
       icon: <FaRegUser />,
-      url: "/login",
+      url: localStorage.getItem("user") || context.user != null ? "/logout" : "/login",
     },
     {
       id: 2,
