@@ -7,17 +7,18 @@ router.get("/get/:title", async (req, res) => {
   let result = [];
   result.push(
     await Electronics.find({
-      $or: [{ title: { $regex: req.params.title } }],
+      $or: [{ title: { $regex: new RegExp(req.params.title, "i") } }],
     })
   );
+
   result.push(
     await Jewels.find({
-      $or: [{ title: { $regex: req.params.title } }],
+      $or: [{ title: new RegExp(req.params.title, "i") }],
     })
   );
   result.push(
     await Clothing.find({
-      $or: [{ title: { $regex: req.params.title } }],
+      $or: [{ title: new RegExp(req.params.title, "i") }],
     })
   );
   res.status(200).json({ result: result });
