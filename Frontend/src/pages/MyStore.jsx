@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useDatabase } from "../contexts/DatabaseContext";
 import ProductCard from "../components/Utilities/ProductCard";
+import Layout from "../Layout";
 
 
 const MyStore = () => {
     const { data } = useDatabase();
     const [favouriteItems, setFavouriteItems] = useState([]);
 
-    useEffect(() => {
-        const filteredItems = data.filter((item) => item.rating.rate >= 3);
-        setFavouriteItems(filteredItems);
-    }, [data]);
-
     return (
-        <>
+        <Layout>
             <section className="container mx-auto mt-4 mb-4">
                 <div>
                     <div className="my-6 flex items-center justify-between">
@@ -38,7 +34,7 @@ const MyStore = () => {
                     </section>
                 </div>
             </section>
-        </>
+        </Layout>
     );
 };
 

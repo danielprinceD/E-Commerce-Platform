@@ -82,12 +82,12 @@ const SearchField = () => {
               <Typewriter
                 options={{
                   strings: [
-                    "Surfing Shorts",
-                    "Carrom Boards",
-                    "Table Tennis",
-                    "Skating",
-                    "Basketball",
+                    "Hot Cloths",
+                    "Trending Shirts",
+                    "Powerful Micro contoller",
                     "Jackets",
+                    "Hoodies",
+                    "Platinum Necklace",
                   ],
                   autoStart: true,
                   loop: true,

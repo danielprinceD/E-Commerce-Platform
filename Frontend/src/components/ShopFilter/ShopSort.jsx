@@ -22,11 +22,12 @@ const ShopSort = ({ sortHandler }) => {
         <select
           className="col-start-1 row-start-1 w-52 appearance-none  rounded-lg border border-slate-300 bg-slate-50 px-4 py-2 text-slate-700 hover:border-cyan-500 hover:bg-white  forced-colors:appearance-auto"
           onChange={sortHandler}
-          defaultValue="popularity"
+          defaultValue="all"
         >
-          <option value="popularity">Popularity</option>
-          <option value="low-to-high">Price: low to high</option>
-          <option value="high-to-low">Price: high to low</option>
+          <option value="all">All</option>
+          <option value="electronics">Electronics</option>
+          <option value="jewels">Jewels</option>
+          <option value="clothing">Clothing</option>
         </select>
       </div>
     </form>

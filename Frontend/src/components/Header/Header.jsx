@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
 import { FaRegUser, FaRegHeart } from "react-icons/fa";
-import { FaRegMessage, FaRegFloppyDisk } from "react-icons/fa6";
+import { FaRegMessage, FaRegFloppyDisk, FaCartShopping } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
-import MegaMenu from "./MegaMenu";
-import HamburgerButton from "./HamburgerButton";
 import SearchField from "./SearchField";
 import MainMenu from "./MainMenu";
-import OffCanvas from "./OffCanvas";
 import SlideInCart from "../SlideInCart/SlideInCart";
 
 import { useHeader } from "../../contexts/HeaderContext";
@@ -34,12 +31,18 @@ const Header = () => {
     },
     {
       id: 3,
+      menu: "Shop",
+      icon: <FaCartShopping />,
+      url: "/shop",
+    },
+    {
+      id: 4,
       menu: "Support",
       icon: <FaRegMessage />,
       url: "/support",
     },
     {
-      id: 4,
+      id: 5,
       menu: "Wishlist",
       icon: <FaRegHeart />,
       url: "/wishlist",
@@ -82,8 +85,8 @@ const Header = () => {
         <div className="bg-blue-500 px-4 py-3 xl:py-4 2xl:px-16">
           <div className="container mx-auto">
             <div className="hidden flex-col items-center justify-between gap-6 md:flex lg:flex-row">
-              <div className="flex w-full justify-between lg:w-auto lg:justify-normal">
-                <HamburgerButton desktop={true} handler={menuHandler} />
+              <div className="flex w-full justify-between lg:w-auto lg:justify-normal mr-10">
+                <FaCartShopping size={30} />
               </div>
               <div className="flex w-full flex-grow items-center lg:w-auto">
                 <div className="flex w-full items-center gap-10 pl-0 pr-0 lg:pl-6 lg:pr-6 ">
@@ -105,7 +108,6 @@ const Header = () => {
             <div className="container mx-auto md:hidden">
               <div className="mb-5 flex justify-between">
                 <div className="flex items-center">
-                  <HamburgerButton handler={offCanvasHandler} />
                 </div>
                 <div className="flex items-center gap-3 ">
                   <a
@@ -132,8 +134,6 @@ const Header = () => {
           </div>
         </div>
       </header>
-      {showMegamenu && <MegaMenu openProduct={openProduct} />}
-      <OffCanvas />
     </>
   );
 };
