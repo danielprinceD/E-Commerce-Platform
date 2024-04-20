@@ -115,12 +115,12 @@ const SearchField = () => {
               <li
                 key={item.id}
                 className="mb-3 flex cursor-pointer gap-10"
-                onClick={() => openProduct(item.id)}
+                onClick={() => openProduct(item._id)}
               >
                 <img src={item.image} alt={item.title} className="w-10" />
                 <div>
                   <h2 className="hover:text-gray-500">{item.title}</h2>
-                  <span className="text-xs text-gray-600">${item.price}</span>
+                  <span className="text-xs text-gray-600">INR {item.price}</span>
                 </div>
               </li>
             ))}
