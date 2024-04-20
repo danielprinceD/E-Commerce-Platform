@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <>
       <Notice />
-      <img src={HeroBanner} alt="Hero Banner" />
+      <img src={HeroBanner} alt="Hero Banner" className="w-screen" />
     </>
   );
 };
