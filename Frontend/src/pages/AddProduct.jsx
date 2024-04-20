@@ -26,6 +26,7 @@ export const AddProduct = () => {
                 "title": title,
                 "desc": description,
                 "price": price,
+                "rating": rating,
             })
             navigate(-1);
         } else {

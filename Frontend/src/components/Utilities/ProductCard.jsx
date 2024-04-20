@@ -39,8 +39,7 @@ const ProductCard = ({ product, className }) => {
             <div className="flex items-center gap-2">
               <RiStarSFill className="inline-block text-yellow-400" />
               <span>
-                {/* {product.rating.rate} | {product.rating.count} */}
-                4.5 | 5.0
+                {product.rating.toFixed(1)} | 5.0
               </span>
             </div>
           </div>

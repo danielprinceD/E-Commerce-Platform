@@ -18,7 +18,6 @@ const SingleProduct = () => {
 
   useEffect(() => {
     FetchSingleProduct(id);
-    console.log(singleProduct);
   }, []);
 
 
@@ -67,7 +66,7 @@ const SingleProduct = () => {
   };
 
   if (singleProduct) {
-    const { title, image, description, category, price } =
+    const { title, image, rating, description, category, price } =
       singleProduct;
     return (
       <Layout>
@@ -100,12 +99,12 @@ const SingleProduct = () => {
                           className="inline-block text-yellow-400"
                         />
                       ))}
-                    {/* {rating.rate % 1 !== 0 && (
+                    {rating % 1 !== 0 && (
                       <FaStarHalfAlt className="inline-block text-yellow-400" />
-                    )}{" "} */}
+                    )}{" "}
                   </span>
                   <span className="text-sm text-gray-500 ">
-                    4.5 /5 (400 Reviews)
+                    {rating.toFixed(0)} / 5.0 (400 Reviews)
                   </span>
                 </div>
                 <p className="my-3 border-b border-t py-4 text-3xl leading-10">
