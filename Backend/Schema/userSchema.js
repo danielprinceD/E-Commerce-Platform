@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
+    require: true,
   },
   password: {
     type: String,
@@ -33,4 +34,4 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 const Cart = mongoose.model("Cart", cartSchema);
 
-module.exports = { User };
+module.exports = { User, Cart };
