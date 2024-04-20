@@ -13,7 +13,6 @@ import { useAuth } from "../Authentication/Auth";
 const Header = () => {
   const { itemsInCart, calculateQuantity, slideInCart, setSlideInCart } =
     useCart();
-  const navigate = useNavigate();
   const context = useAuth();
 
   const TotalQuantity = calculateQuantity(itemsInCart);
@@ -41,12 +40,6 @@ const Header = () => {
       menu: "Support",
       icon: <FaRegMessage />,
       url: "/support",
-    },
-    {
-      id: 5,
-      menu: "Wishlist",
-      icon: <FaRegHeart />,
-      url: "/wishlist",
     },
   ];
 

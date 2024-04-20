@@ -58,10 +58,6 @@ const routes = createBrowserRouter([
     element: <MyStore />,
   },
   {
-    path: "/wishlist",
-    element: <Wishlist />,
-  },
-  {
     path: "/support",
     element: <Support />,
   },

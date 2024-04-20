@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDatabase } from "../contexts/DatabaseContext";
 import ProductCard from "../components/Utilities/ProductCard";
 import Layout from "../Layout";
+import { useNavigate } from "react-router-dom";
 
 
 const MyStore = () => {
     const { data } = useDatabase();
-    const [favouriteItems, setFavouriteItems] = useState([]);
+    const navigate = useNavigate();
+    const handleAddProduct = () => {
+        navigate('/addProduct');
+    }
 
     return (
         <Layout>
@@ -16,14 +20,14 @@ const MyStore = () => {
                         <h2 className="text-lg font-bold uppercase">
                             Your Products
                         </h2>
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
+                        <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" onClick={handleAddProduct}>
                             Add Product
                         </button>
 
                     </div>
                     <section>
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-                            {favouriteItems.map((product, index) => {
+                            {data.map((product, index) => {
                                 return (
                                     <React.Fragment key={index}>
                                         <ProductCard index={index} product={product} />
