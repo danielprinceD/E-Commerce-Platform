@@ -21,6 +21,7 @@ import MyStore from "./pages/MyStore.jsx";
 import Wishlist from "./pages/WishList.jsx";
 import { Support } from "./pages/Support.jsx";
 import { Auth } from "./components/Authentication/Auth.jsx";
+import { Logout } from "./components/Authentication/Logout.jsx";
 
 const routes = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const routes = createBrowserRouter([
   {
     path: "/support",
     element: <Support />,
+  },
+  {
+    path: "/logout",
+    element: <Logout />,
   },
 ]);
 
