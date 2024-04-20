@@ -18,7 +18,8 @@ const SingleProduct = () => {
 
   useEffect(() => {
     FetchSingleProduct(id);
-  }, [singleProduct, FetchSingleProduct]);
+    console.log(singleProduct);
+  }, []);
 
 
 
@@ -66,7 +67,7 @@ const SingleProduct = () => {
   };
 
   if (singleProduct) {
-    const { title, image, description, category, price, rating } =
+    const { title, image, description, category, price } =
       singleProduct;
     return (
       <Layout>
@@ -91,7 +92,7 @@ const SingleProduct = () => {
                 </h2>
                 <div className="my-4 flex items-center gap-2">
                   <span className="">
-                    {new Array(Math.floor(rating.rate))
+                    {new Array(Math.floor(5))
                       .fill(null)
                       .map((_, index) => (
                         <FaStar
@@ -99,12 +100,12 @@ const SingleProduct = () => {
                           className="inline-block text-yellow-400"
                         />
                       ))}
-                    {rating.rate % 1 !== 0 && (
+                    {/* {rating.rate % 1 !== 0 && (
                       <FaStarHalfAlt className="inline-block text-yellow-400" />
-                    )}{" "}
+                    )}{" "} */}
                   </span>
                   <span className="text-sm text-gray-500 ">
-                    {rating.rate}/5 ({rating.count} Reviews)
+                    4.5 /5 (400 Reviews)
                   </span>
                 </div>
                 <p className="my-3 border-b border-t py-4 text-3xl leading-10">

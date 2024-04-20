@@ -16,7 +16,6 @@ export const Auth = ({ children }) => {
     }
 
     const logout = () => {
-
         localStorage.setItem("user", "")
         setUser(null)
     }
