@@ -13,7 +13,6 @@ export const CartProvider = ({ children }) => {
   const addToCartHandler = (
     id,
     title,
-    category,
     image,
     price,
     quantity = 1,
@@ -34,7 +33,13 @@ export const CartProvider = ({ children }) => {
     } else {
       setItemsInCart((prevItems) => [
         ...prevItems,
-        { id, title, category, image, price, quantity },
+        {
+          id,
+          title,
+          image,
+          price,
+          quantity
+        },
       ]);
     }
 
