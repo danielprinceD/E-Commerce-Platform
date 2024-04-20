@@ -100,7 +100,7 @@ const Confirmation = () => {
                       </div>
 
                       <div>
-                        <p className="text-sm font-bold">${items.price}</p>
+                        <p className="text-sm font-bold">INR {items.price}</p>
                       </div>
                     </li>
                   ))}
@@ -112,14 +112,14 @@ const Confirmation = () => {
                 <li className="flex items-center justify-between">
                   <p className="text-sm font-medium text-gray-800">Sub total</p>
                   <p className="text-sm font-normal text-gray-600">
-                    ${calculateTotal(itemsInCart)}
+                    INR {calculateTotal(itemsInCart)}
                   </p>
                 </li>
 
                 <li className="mt-4 flex items-center justify-between">
                   <p className="text-sm font-normal text-gray-800">Total</p>
                   <p className="text-sm font-semibold">
-                    ${calculateTotal(itemsInCart)}
+                    INR {calculateTotal(itemsInCart)}
                   </p>
                 </li>
               </ul>
@@ -129,7 +129,7 @@ const Confirmation = () => {
           <CartEmpty
             heading="Your checkout form is empty"
             subHeading="Please add the details in the checkout form to purchase your order"
-            icon=<FaWpforms className="mx-auto h-12 w-12 text-gray-400" />
+            icon={<FaWpforms />}
             linkTo="/checkout"
           />
         )}
