@@ -66,8 +66,6 @@ const SingleProduct = () => {
   };
 
   if (singleProduct) {
-    const { title, image, rating, description, category, price } =
-      singleProduct;
     return (
       <Layout>
         <div className="container mx-auto py-8">
@@ -77,21 +75,18 @@ const SingleProduct = () => {
                 <div className="mb-4 rounded-lg bg-gray-100 p-10">
                   <img
                     className="mx-auto h-full w-10/12 object-cover mix-blend-multiply"
-                    src={image}
-                    alt={title}
+                    src={singleProduct.image}
+                    alt={singleProduct.title}
                   />
                 </div>
               </div>
               <div className="p-10 px-4 md:flex-1">
-                <p className="mb-4 text-sm font-bold uppercase text-blue-400">
-                  {category}
-                </p>
                 <h2 className="mb-3 text-4xl font-bold leading-9 text-gray-800">
-                  {title}
+                  {singleProduct.title}
                 </h2>
                 <div className="my-4 flex items-center gap-2">
                   <span className="">
-                    {new Array(Math.floor(5))
+                    {new Array(Math.floor(singleProduct.rating))
                       .fill(null)
                       .map((_, index) => (
                         <FaStar
@@ -99,18 +94,18 @@ const SingleProduct = () => {
                           className="inline-block text-yellow-400"
                         />
                       ))}
-                    {rating % 1 !== 0 && (
+                    {singleProduct.rating % 1 !== 0 && (
                       <FaStarHalfAlt className="inline-block text-yellow-400" />
                     )}{" "}
                   </span>
                   <span className="text-sm text-gray-500 ">
-                    {rating.toFixed(0)} / 5.0 (400 Reviews)
+                    {singleProduct.rating.toFixed(0)} / 5.0 (400 Reviews)
                   </span>
                 </div>
                 <p className="my-3 border-b border-t py-4 text-3xl leading-10">
-                  {price} INR
+                  {singleProduct.price} INR
                 </p>
-                <p className="my-6 text-gray-600 *:text-base">{description}</p>
+                <p className="my-6 text-gray-600 *:text-base">{singleProduct.desc}</p>
 
                 <div className="mb-4 flex flex-col gap-6">
                   <form className="flex items-center gap-10">
@@ -181,11 +176,10 @@ const SingleProduct = () => {
                     className="flex items-center justify-center gap-3 rounded bg-sky-500 px-8 py-3 text-white transition duration-300 hover:bg-sky-600"
                     onClick={() => {
                       addToCartHandler(
-                        id,
-                        title,
-                        category,
-                        image,
-                        price,
+                        singleProduct._id,
+                        singleProduct.title,
+                        singleProduct.image,
+                        singleProduct.price,
                         quantity,
                       );
                     }}
