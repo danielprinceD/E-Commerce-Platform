@@ -8,8 +8,6 @@ const SlideInCart = ({ setSlideInCart, slideInCart, className }) => {
   const { itemsInCart, calculateTotal, calculateQuantity, removeItemHandler } =
     useCart();
 
-  const { retrieveUserData, userData } = useCheckout();
-
   return (
     <div
       className={twMerge(

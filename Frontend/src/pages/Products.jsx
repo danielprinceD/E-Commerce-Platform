@@ -13,7 +13,6 @@ const Products = () => {
     jewels: [],
     electronics: [],
   });
-  const [selectedCategory, setSelectedCategory] = useState(null);
   const [filteredData, setFilteredData] = useState(data);
 
 
@@ -22,17 +21,6 @@ const Products = () => {
     setUniqueCat(uniqueCategories);
   }, [fullData]);
 
-
-  useEffect(() => {
-    if (selectedCategory) {
-      const filtered = data.filter(
-        (item) => item.category === selectedCategory,
-      );
-      setFilteredData(filtered);
-    } else {
-      setFilteredData(data);
-    }
-  }, [data, selectedCategory]);
 
 
   const sortProducts = (sortBy) => {
@@ -54,11 +42,6 @@ const Products = () => {
   useEffect(() => {
     sortProducts("all");
   }, [data]);
-
-
-  const categorySortingHandler = (category) => {
-    setSelectedCategory(category);
-  };
 
 
   const sortHandler = (event) => {
