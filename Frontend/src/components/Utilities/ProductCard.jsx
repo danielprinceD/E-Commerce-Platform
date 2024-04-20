@@ -29,7 +29,10 @@ const ProductCard = ({ product, className }) => {
               className={`aspect-square w-full  cursor-pointer object-contain transition duration-500 ease-out ${isHovered && "scale-110"}`}
               src={product.image}
               alt={product.title}
-              onClick={() => openProduct(product.id)}
+              onClick={() => {
+                openProduct(product._id)
+              }
+              }
             />
           </div>
           <div className="absolute bottom-8 right-3 rounded bg-[#000000a6] p-1 text-xs text-white">

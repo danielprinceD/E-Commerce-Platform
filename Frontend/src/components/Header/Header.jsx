@@ -7,7 +7,6 @@ import SearchField from "./SearchField";
 import MainMenu from "./MainMenu";
 import SlideInCart from "../SlideInCart/SlideInCart";
 
-import { useHeader } from "../../contexts/HeaderContext";
 import { useCart } from "../../contexts/CartContext";
 
 const Header = () => {
@@ -52,27 +51,6 @@ const Header = () => {
   const MobileNavigation = Navigation.filter((item) =>
     ["Wishlist"].includes(item.menu),
   );
-
-  const { isOpen, setIsOpen, menuHandler, offCanvasHandler } = useHeader();
-  const [showMegamenu, setShowMegamenu] = useState(true);
-
-  useEffect(() => {
-    if (!isOpen) {
-      const timeout = setTimeout(() => {
-        setShowMegamenu(false);
-      }, 1000);
-
-      return () => clearTimeout(timeout);
-    } else {
-      setShowMegamenu(true);
-    }
-  }, [isOpen]);
-
-  const openProduct = (id) => {
-    navigate(`/shop/${id}`);
-    setShowMegamenu((showMegamenu) => !showMegamenu);
-    setIsOpen((isOpen) => !isOpen);
-  };
 
   return (
     <>
