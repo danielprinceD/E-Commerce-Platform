@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaRegUser, FaRegHeart } from "react-icons/fa";
 import { FaRegMessage, FaRegFloppyDisk, FaCartShopping } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Header.css";
 import SearchField from "./SearchField";
 import MainMenu from "./MainMenu";
@@ -66,7 +66,9 @@ const Header = () => {
           <div className="container mx-auto">
             <div className="hidden flex-col items-center justify-between gap-6 md:flex lg:flex-row">
               <div className="flex w-full justify-between lg:w-auto lg:justify-normal mr-10">
-                <FaCartShopping size={30} />
+                <NavLink to={'/'}>
+                  <FaCartShopping size={30} />
+                </NavLink>
               </div>
               <div className="flex w-full flex-grow items-center lg:w-auto">
                 <div className="flex w-full items-center gap-10 pl-0 pr-0 lg:pl-6 lg:pr-6 ">

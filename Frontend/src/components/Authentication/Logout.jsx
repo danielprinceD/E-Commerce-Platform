@@ -13,7 +13,9 @@ export const Logout = () => {
           context.logout();
           navigate('/login');
         }}>Logout</button>
-        <button className="py-4 px-6 bg-gray-600 text-white rounded cursor-pointer transition duration-300 hover:bg-gray-700">Cancel</button>
+        <button className="py-4 px-6 bg-gray-600 text-white rounded cursor-pointer transition duration-300 hover:bg-gray-700" onClick={() => {
+          navigate(-1);
+        }}>Cancel</button>
       </div>
     </div>
   );
