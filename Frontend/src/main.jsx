@@ -18,10 +18,10 @@ import { CheckoutProvider } from "./contexts/CheckoutContext.jsx";
 import { Login } from "./components/Authentication/Login.jsx";
 import { Register } from "./components/Authentication/Register.jsx";
 import MyStore from "./pages/MyStore.jsx";
-import Wishlist from "./pages/WishList.jsx";
 import { Support } from "./pages/Support.jsx";
 import { Auth } from "./components/Authentication/Auth.jsx";
 import { Logout } from "./components/Authentication/Logout.jsx";
+import { AddProduct } from "./pages/AddProduct.jsx";
 
 const routes = createBrowserRouter([
   {
@@ -64,6 +64,10 @@ const routes = createBrowserRouter([
   {
     path: "/logout",
     element: <Logout />,
+  },
+  {
+    path: "/addProduct",
+    element: <AddProduct />,
   },
 ]);
 

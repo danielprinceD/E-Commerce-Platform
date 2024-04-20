@@ -86,10 +86,10 @@ const Header = () => {
                 </div>
                 <div className="flex items-center gap-3 ">
                   <a
-                    href="/sign-in"
+                    href="/login"
                     className="flex h-7 w-16 items-center justify-center rounded-md border border-white text-xs uppercase text-white"
                   >
-                    Sign In
+                    {localStorage.getItem("user") || context.user != null ? localStorage.getItem("user") : "Login"}
                   </a>
                 </div>
               </div>
